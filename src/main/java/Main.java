@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         Finca finca = Finca.cargarEstado();
         
-        // Si no hay un estado guardado, creamos una finca nueva con datos de ejemplo
+        //Si no hay un estado guardado, creamos una finca nueva con datos de ejemplo
         if (finca == null) {
             finca = new Finca("La Esperanza");
             finca.agregarUsuario(new Usuario("KCalvo", "1234"));
@@ -25,14 +25,14 @@ public class Main {
             finca.agregarLote(lote2);
         }
 
-        // Se inicia el simulador de sensores en segundo plano
+        //Se inicia el simulador de sensores en segundo plano
         SensorSimulator simulator = new SensorSimulator(finca);
         simulator.start();
         
         Scanner scanner = new Scanner(System.in);
         Usuario usuarioLogueado = null;
 
-        // Bucle de Login (HU-01)
+        //Bucle de Login (HU-01)
         while (usuarioLogueado == null) {
             System.out.println("\nBienvenido a CoffeeTech");
             System.out.println("---------------------------------");
@@ -50,7 +50,7 @@ public class Main {
             }
         }
 
-        // Bucle del Menú Principal
+        //Bucle del Menú Principal
         boolean salir = false;
         while (!salir) {
             System.out.println("\n--- Coffee Tech --- Finca \"" + finca.getNombreFinca() + "\" ---");
@@ -62,10 +62,10 @@ public class Main {
 
             try {
                 int opcion = scanner.nextInt();
-                scanner.nextLine(); // Limpiar buffer
+                scanner.nextLine(); //Limpiar buffer
 
                 switch (opcion) {
-                    case 1: // HU-02: Visualización de Lotes
+                    case 1: //HU-02: Visualización de Lotes
                         System.out.println("\nLotes Registrados:");
                         for (int i = 0; i < finca.getLotes().size(); i++) {
                             System.out.println((i + 1) + ". " + finca.getLotes().get(i).getNombreLote());
@@ -93,7 +93,7 @@ public class Main {
             }
         }
         
-        // Al salir, se guarda el estado y se detiene el simulador
+        //Al salir, se guarda el estado y se detiene el simulador
         System.out.println("Cerrando aplicación...");
         simulator.stopSimulator();
         Finca.guardarEstado(finca);

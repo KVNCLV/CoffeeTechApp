@@ -22,31 +22,31 @@ public class SensorSimulator extends Thread {
     public void run() {
         while (running) {
             try {
-                // El simulador se detiene por 5 segundos entre cada lectura
+                //El simulador se detiene por 5 segundos entre cada lectura
                 Thread.sleep(5000);
                 
                 if (finca == null || finca.getLotes().isEmpty()) {
-                    continue; // Si no hay lotes, no hace nada y vuelve a esperar
+                    continue; //Si no hay lotes, no hace nada y vuelve a esperar
                 }
                 
                 ArrayList<LoteDeCafe> lotes = finca.getLotes();
                 
-                // Selecciona un lote al azar
+                //Selecciona un lote al azar
                 LoteDeCafe loteAleatorio = lotes.get(random.nextInt(lotes.size()));
                 
                 if (loteAleatorio.getListaSensores().isEmpty()) {
-                    continue; // Si el lote no tiene sensores, no hace nada
+                    continue; //Si el lote no tiene sensores, no hace nada
                 }
                 
                 ArrayList<Sensor> sensores = loteAleatorio.getListaSensores();
                 
-                // Selecciona un sensor al azar de ese lote
+                //Selecciona un sensor al azar de ese lote
                 Sensor sensorAleatorio = sensores.get(random.nextInt(sensores.size()));
                 
-                // Genera una nueva lectura para ese sensor
+                //Genera una nueva lectura para ese sensor
                 sensorAleatorio.leerValor();
                 
-                // System.out.println("[Simulador] Nueva lectura generada para " + sensorAleatorio.getTipo());
+                //System.out.println("[Simulador] Nueva lectura generada para " + sensorAleatorio.getTipo());
                 
             } catch (InterruptedException e) {
                 // Si el hilo es interrumpido, se detiene de forma segura.

@@ -28,7 +28,7 @@ public class Finca implements Serializable {
         this.lotes = new ArrayList<>();
     }
     
-    // Métodos para gestionar los datos de la finca
+    //Métodos para gestionar los datos de la finca
     public void agregarUsuario(Usuario user) { 
         this.usuarios.add(user); 
     }
@@ -51,12 +51,10 @@ public class Finca implements Serializable {
                 return user; // Devuelve el objeto Usuario si la validación es exitosa
             }
         }
-        return null; // Devuelve null si el usuario no se encuentra o la contraseña es incorrecta
+        return null; //Devuelve null si el usuario no se encuentra o la contraseña es incorrecta
     }
     
-    // --- MÉTODOS ESTÁTICOS PARA LA SERIALIZACIÓN ---
-    
-    /**
+     /**
      * Guarda el objeto Finca completo en un archivo binario.
      * @param finca El objeto Finca que contiene todo el estado de la aplicación.
      */

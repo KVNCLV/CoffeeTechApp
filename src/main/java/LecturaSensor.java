@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
 public class LecturaSensor implements Serializable {
-    private static final long serialVersionUID = 1L; // Necesario para la serialización
+    private static final long serialVersionUID = 1L; //Necesario para la serialización
     
     private double valor;
     private String unidad;
@@ -19,7 +19,7 @@ public class LecturaSensor implements Serializable {
 
     @Override
     public String toString() {
-        // Formateador para mostrar la fecha y hora de manera legible
+        //Formateador para mostrar la fecha y hora de manera legible
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return String.format("%.2f %s (leído a las %s)", valor, unidad, sdf.format(fechaHora));
     }

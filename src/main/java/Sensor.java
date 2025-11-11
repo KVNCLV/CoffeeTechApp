@@ -16,7 +16,7 @@ public abstract class Sensor implements Serializable {
         this.historialLecturas = new ArrayList<>();
     }
 
-    // Método abstracto que obliga a las clases hijas a implementar su propia lógica de lectura
+    //Método abstracto que obliga a las clases hijas a implementar su propia lógica de lectura
     public abstract LecturaSensor leerValor();
 
     public LecturaSensor getUltimaLectura() {

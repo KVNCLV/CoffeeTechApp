@@ -9,7 +9,7 @@ public class SensorTemperatura extends Sensor {
 
     @Override
     public LecturaSensor leerValor() {
-        // Simula una lectura de temperatura realista para café (ej. entre 18 y 26 grados)
+        //Simula una lectura de temperatura realista para café (ej. entre 18 y 26 grados)
         double valor = ThreadLocalRandom.current().nextDouble(18.0, 26.0);
         LecturaSensor nuevaLectura = new LecturaSensor(valor, "°C");
         this.historialLecturas.add(nuevaLectura);

@@ -29,9 +29,8 @@ public class LoteDeCafe implements Serializable {
         StringBuilder reporte = new StringBuilder();
         reporte.append("Reporte para Lote '").append(nombreLote).append("':\n");
         
-        // DEMOSTRACIÓN DE POLIMORFISMO:
-        // Se itera sobre la lista de Sensores. El programa no sabe ni le importa
-        // si son de Temperatura o Humedad, simplemente llama a sus métodos.
+        //Se itera sobre la lista de Sensores. El programa no sabe ni le importa
+        //si son de Temperatura o Humedad, simplemente llama a sus métodos.
         for (Sensor sensor : listaSensores) {
             LecturaSensor ultimaLectura = sensor.getUltimaLectura();
             if (ultimaLectura != null) {
